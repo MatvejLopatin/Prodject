@@ -1,14 +1,34 @@
+import java.util.Scanner;
+
 public class ex {
     public static void main(String[] args) {
-
-        String arr[][] = new String[][] {{"a1", "a2", "a3", "a4", "a5", "a6"},
-                                        {"a1", "a2", "a3", "a4", "a5", "a6"},
-                                        {"a1", "a2", "a3", "a4", "a5", "a6"}};
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + " ");
-                }
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Введите строку: ");
+        String inputString = scanner.nextLine();
+        
+        if (isPalindrome(inputString)) {
+            System.out.println("Введенная строка является палиндромом.");
+        } else {
+            System.out.println("Введенная строка не является палиндромом.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean isPalindrome(String str) {
+        str = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(); // Удаляем все символы, кроме букв и цифр, и приводим к нижнему регистру
+        int left = 0;
+        int right = str.length() - 1;
+        
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
             }
-            System.out.println();
+            left++;
+            right--;
+        }
+        
+        return true;
     }
 }
