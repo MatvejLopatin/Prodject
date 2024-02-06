@@ -16,7 +16,7 @@ public class hjgjg {
         
         System.out.println("Добро пожаловать в игру \"крестики нолики\"\nНапишите \"начать\" если хотите начать");
 
-        if (scanner.next().toLowerCase().equals("начать")) {
+        while (!scanner.next().toLowerCase().equals("начать")) {
             System.out.println("Напишите \"начать\" если хотите начать");
         }
             
