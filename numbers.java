@@ -1,6 +1,6 @@
 public class numbers {
     public static void main(String[] args) {
-        int[] arr = {2, 4, 8, 1, 3};
+        int[] arr = {2, 4, 8, 1, 3, 5, 0, 7, 6, -1};
         int d = 0;
 
         for (int i = arr.length-1; i >= 0; i--) {
